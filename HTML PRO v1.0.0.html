@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>HTMLPRO v1.0.0</title>
+
+  <!-- فونت حرفه‌ای -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+
+  <!-- استایل حرفه‌ای و ریسپانسیو -->
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: #000;
+      font-family: 'Orbitron', sans-serif;
+      color: #00ffcc;
+      overflow: hidden;
+    }
+
+    header {
+      text-align: center;
+      padding: 2vh;
+      font-size: 4vw;
+      text-shadow: 0 0 10px #00ffcc;
+    }
+
+    .container {
+      margin: 2vh auto;
+      padding: 2vw;
+      max-width: 800px;
+      background: rgba(0, 255, 204, 0.05);
+      border: 1px solid #00ffcc;
+      border-radius: 12px;
+      box-shadow: 0 0 20px #00ffcc;
+    }
+
+    .section {
+      margin-bottom: 2vh;
+    }
+
+    .section h2 {
+      font-size: 2vw;
+      color: #00ffff;
+      margin-bottom: 1vh;
+      border-bottom: 1px solid #00ffcc;
+      padding-bottom: 0.5vh;
+    }
+
+    .section ul {
+      list-style: none;
+      padding-left: 0;
+      font-size: 1.2vw;
+      line-height: 1.8;
+    }
+
+    canvas {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- بارش ماتریکسی -->
+  <canvas id="matrixCanvas"></canvas>
+
+  <!-- هدر -->
+  <header>
+    HTMLPRO v1.0.0<br>
+    <small>Powered by PersianTechNet</small>
+  </header>
+
+  <!-- کادر حرفه‌ای مشخصات -->
+  <div class="container">
+    <div class="section">
+      <h2>📄 مشخصات فایل</h2>
+      <ul>
+        <li>نام فایل: HTMLPRO</li>
+        <li>نسخه: 1.0.0</li>
+        <li>سازنده: PersianTechNet</li>
+        <li>نوع فایل: HTML5 اجرایی</li>
+        <li>هسته گرافیکی: Canvas ماتریکسی</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>⚙️ ویژگی‌ها</h2>
+      <ul>
+        <li>طراحی ریسپانسیو برای موبایل، دسکتاپ، تبلت</li>
+        <li>بارش صفر و یک ماتریکسی با کیفیت بالا</li>
+        <li>انفجار ماتریکسی با لمس و کلیک</li>
+        <li>قابل توسعه با WebGL، SVG، یا API</li>
+        <li>خوانایی بالا و ساختار منظم</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>🖥️ سازگاری</h2>
+      <ul>
+        <li>مرورگرها: Chrome, Firefox, Edge, Safari</li>
+        <li>سیستم‌عامل‌ها: Windows, macOS, Linux, Android, iOS</li>
+        <li>رزولوشن: سازگار با تمام ابعاد صفحه</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- اسکریپت بارش ماتریکسی -->
+  <script>
+    const canvas = document.getElementById("matrixCanvas");
+    const ctx = canvas.getContext("2d");
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = 200;
+    }
+
+    resizeCanvas();
+
+    const letters = "01";
+    const fontSize = 16;
+    const columns = Math.floor(canvas.width / fontSize);
+    const drops = Array(columns).fill(1);
+
+    function drawMatrix() {
+      ctx.fillStyle = "rgba(0, 0, 0, 0.1)";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      ctx.fillStyle = "#0F0";
+      ctx.font = fontSize + "px monospace";
+
+      for (let i = 0; i < drops.length; i++) {
+        const text = letters[Math.floor(Math.random() * letters.length)];
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+          drops[i] = 0;
+        }
+        drops[i]++;
+      }
+    }
+
+    setInterval(drawMatrix, 33);
+
+    canvas.addEventListener("click", explodeMatrix);
+    canvas.addEventListener("touchstart", explodeMatrix);
+
+    function explodeMatrix(e) {
+      const x = e.clientX || e.touches[0].clientX;
+      const y = e.clientY || e.touches[0].clientY;
+
+      for (let i = 0; i < 100; i++) {
+        const dx = (Math.random() - 0.5) * 200;
+        const dy = (Math.random() - 0.5) * 200;
+        ctx.fillStyle = "#0F0";
+        ctx.fillText("0", x + dx, y + dy);
+        ctx.fillText("1", x - dx, y - dy);
+      }
+    }
+
+    window.addEventListener("resize", resizeCanvas);
+  </script>
+
+</body>
+</html>
