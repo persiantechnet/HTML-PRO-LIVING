@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" data-ai="enabled">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML7 Smart Page</title>
+  <script type="module">
+    import { AIComponent } from 'https://cdn.html7.ai/components.js';
+
+    AIComponent.init({
+      voice: true,
+      contextAware: true,
+      theme: 'adaptive'
+    });
+  </script>
+  <style>
+    body {
+      font-family: system-ui;
+      background: linear-gradient(to right, #0f0, #00f);
+      color: #fff;
+      padding: 20px;
+    }
+    smart-box {
+      display: block;
+      padding: 15px;
+      border: 2px dashed #fff;
+      background: rgba(0,0,0,0.5);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome to HTML7</h1>
+    <p>This page adapts to your voice, context, and device.</p>
+  </header>
+
+  <smart-box ai-response="true">
+    <p>Ask me anything. I’ll respond using built-in AI.</p>
+  </smart-box>
+
+  <footer>
+    <p>Author: Saeed | Powered by HTML7 AI Engine</p>
+  </footer>
+</body>
+</html>

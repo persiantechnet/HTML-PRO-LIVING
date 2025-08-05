@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <title>سفر در زمان با HTML</title>
+  <style>
+    body { margin: 0; font-family: sans-serif; }
+
+    section { padding: 20px; margin-bottom: 40px; border-radius: 10px; }
+
+    h2 { margin-top: 0; }
+    pre {
+      background: rgba(0,0,0,0.05);
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+
+    /* HTML 1.0 - ساده و کلاسیک */
+    .v1 {
+      background: #f4f4f4;
+      color: #000;
+      font-family: 'Times New Roman', serif;
+    }
+
+    /* HTML 2.0 - فرم‌ها و جدول‌ها */
+    .v2 {
+      background: #e0f7fa;
+      color: #004d40;
+      font-family: 'Arial', sans-serif;
+    }
+
+    /* HTML 3.2 - ورود CSS و JS */
+    .v3 {
+      background: linear-gradient(to right, #ffeb3b, #ffc107);
+      color: #212121;
+      font-family: 'Verdana', sans-serif;
+    }
+
+    /* HTML 4.01 - ساختاردهی و DOM */
+    .v4 {
+      background: #fff3e0;
+      color: #6d4c41;
+      font-family: 'Georgia', serif;
+    }
+
+    /* HTML5 - مدرن و تعاملی */
+    .v5 {
+      background: #263238;
+      color: #ffffff;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    /* HTML6 - امنیت و ماژولار بودن */
+    .v6 {
+      background: #1b5e20;
+      color: #c8e6c9;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    /* HTML7 - آینده‌نگر و هوشمند */
+    .v7 {
+      background: radial-gradient(circle, #0f0c29, #302b63, #24243e);
+      color: #00e5ff;
+      font-family: 'Courier New', monospace;
+      text-shadow: 0 0 5px #00e5ff;
+    }
+  </style>
+</head>
+<body>
+
+  <section class="v1">
+    <h2>HTML 1.0 (1993)</h2>
+    <p>نسخه ابتدایی با ساختار بسیار ساده و بدون استایل.</p>
+    <pre><code>&lt;html&gt;
+  &lt;head&gt;&lt;title&gt;صفحه ساده&lt;/title&gt;&lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;سلام دنیا&lt;/h1&gt;
+    &lt;p&gt;این یک پاراگراف است.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+  </section>
+
+  <section class="v2">
+    <h2>HTML 2.0 (1995)</h2>
+    <p>اضافه شدن فرم‌ها و جدول‌ها برای تعامل بیشتر.</p>
+    <pre><code>&lt;form&gt;
+  نام: &lt;input type="text" name="name"&gt;
+  &lt;input type="submit" value="ارسال"&gt;
+&lt;/form&gt;</code></pre>
+  </section>
+
+  <section class="v3">
+    <h2>HTML 3.2 (1997)</h2>
+    <p>ورود CSS و جاوااسکریپت به دنیای HTML.</p>
+    <pre><code>&lt;style&gt;
+  h1 { color: red; }
+&lt;/style&gt;
+&lt;script&gt;
+  alert("سلام!");
+&lt;/script&gt;</code></pre>
+  </section>
+
+  <section class="v4">
+    <h2>HTML 4.01 (1999)</h2>
+    <p>ساختاردهی بهتر، پشتیبانی از DOM و استانداردسازی بیشتر.</p>
+    <pre><code>&lt;div id="content"&gt;محتوا&lt;/div&gt;
+&lt;script&gt;
+  document.getElementById("content").style.color = "blue";
+&lt;/script&gt;</code></pre>
+  </section>
+
+  <section class="v5">
+    <h2>HTML5 (2014)</h2>
+    <p>نسخه مدرن با پشتیبانی از ویدیو، canvas و APIهای تعاملی.</p>
+    <pre><code>&lt;video controls&gt;
+  &lt;source src="video.mp4" type="video/mp4"&gt;
+&lt;/video&gt;
+
+&lt;canvas id="myCanvas"&gt;&lt;/canvas&gt;</code></pre>
+  </section>
+
+  <section class="v6">
+    <h2>HTML6 (مفهومی)</h2>
+    <p>تمرکز بر امنیت، ماژولار بودن و تعامل با APIها.</p>
+    <pre><code>&lt;module src="component.html"&gt;&lt;/module&gt;
+&lt;secure-form&gt;
+  &lt;input type="password"&gt;
+&lt;/secure-form&gt;</code></pre>
+  </section>
+
+  <section class="v7">
+    <h2>HTML7 (آینده‌نگر)</h2>
+    <p>تعامل با هوش مصنوعی، طراحی واکنش‌گرا پیشرفته و کامپوننت‌های هوشمند.</p>
+    <pre><code>&lt;ai-terminal&gt;
+  سلام! چطور می‌تونم کمک‌تون کنم؟
+&lt;/ai-terminal&gt;
+
+&lt;responsive-grid columns="3"&gt;
+  &lt;item&gt;مورد اول&lt;/item&gt;
+&lt;/responsive-grid&gt;</code></pre>
+  </section>
+
+</body>
+</html>

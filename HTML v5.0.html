@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML5 Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #222;
+      color: #0f0;
+      padding: 20px;
+    }
+    canvas {
+      border: 1px solid #0f0;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome to HTML5</h1>
+  </header>
+
+  <section>
+    <p>This page demonstrates HTML5 features like video, canvas, and semantic tags.</p>
+
+    <video controls width="300">
+      <source src="sample.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    <canvas id="myCanvas" width="200" height="100"></canvas>
+  </section>
+
+  <script>
+    const canvas = document.getElementById('myCanvas');
+    const ctx = canvas.getContext('2d');
+    ctx.fillStyle = 'lime';
+    ctx.fillRect(10, 10, 180, 80);
+  </script>
+</body>
+</html>
